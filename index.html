@@ -9,7 +9,7 @@
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.6/aframe/build/aframe-ar.js"></script>
     <script src="javascript.js"></script>
-   <!-- <script>
+    <!-- <script>
         AFRAME.registerComponent('loader', {
             init: function () {
                 let loader = document.querySelector("#loadingEl")
@@ -24,19 +24,26 @@
 </head>
 
 <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">
+    <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false" >
         <a-asset>
             <a-asset-item id="modelo" src="scene.gltf"></a-asset-item>
         </a-asset>
 
         <a-marker preset='hiro'>
-            <a-entity id="loadingEl" gltf-model="#modelo" scale="0.1 0.1 0.1" position="-1 -1 1" loader></a-entity>
+
+            <a-entity id="loadingEl" gltf-model="#modelo" scale="0.1 0.1 0.1" position="-1 -1 1" 
+            animation="property: rotation; dur: 15000;
+            to: 0 360 0; loop: true "  loader>
+               
+                    
+                </a-entity>
+            </a-entity>
         </a-marker>
     </a-scene>
 
-     <!--<script src="code-F.js"></script>-->
+    <!--<script src="code-F.js"></script>-->
 
-   <script>
+    <script>
 
         const sceneEl = document.querySelector('a-scene');
         sceneEl.addEventListener('loaded', () => {
