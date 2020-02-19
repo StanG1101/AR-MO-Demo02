@@ -8,6 +8,7 @@
     <title>Realidad Aumentada Web Cliente: Monte Olivo Demo01</title>
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.6/aframe/build/aframe-ar.js"></script>
+
     <script src="javascript.js"></script>
     <!-- <script>
         AFRAME.registerComponent('loader', {
@@ -24,20 +25,15 @@
 </head>
 
 <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false" >
+    <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">
         <a-asset>
             <a-asset-item id="modelo" src="scene.gltf"></a-asset-item>
         </a-asset>
 
         <a-marker preset='hiro'>
-
-            <a-entity id="loadingEl" gltf-model="#modelo" scale="0.1 0.1 0.1" position="-1 -1 1" 
-            animation="property: rotation; dur: 15000;
-            to: 0 360 0; loop: true "  loader>
-               
-                    
-                </a-entity>
+            <a-entity id="loadingEl" gltf-model="#modelo" scale="0.1 0.1 0.1" position="-1 -1 1"  loader>
             </a-entity>
+            
         </a-marker>
     </a-scene>
 
@@ -52,6 +48,7 @@
         });
 
     </script>
+    
 </body>
 
 </html>
